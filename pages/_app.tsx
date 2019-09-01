@@ -108,18 +108,11 @@ export default class MyApp extends App<any> {
 					<title>{`Li Yan - Weather Forecast`}</title>
 					{/* favicons */}
 					<link rel='icon' type='image/png' sizes='32x32' href='/static/favicon/favicon-32x32.png' />
-					<link rel='icon' type='image/png' sizes='16x16' href='/static/favicon/favicon-16x16.png' />
-					<link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet" />
-					<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet" />
-					<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/fontawesome.min.css" />
 					<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
-					<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i,800&display=swap" rel="stylesheet" />
+					<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Sansita:700&display=swap" rel="stylesheet" />
 					<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-					<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
 					<meta name='msapplication-TileColor' content='#2d89ef' />
 					<meta name='theme-color' content='#ffffff' />
-					{/* google fonts */}
-					<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:400,700'></link>
 				</Head>
 				<Layout hasSider={true} id={this.state.printPDF ? 'tour-page' : null}>
 					<Layout className={this.state.collapsed === false && 'tc-dim-no-scroll-bars'} style={{ overflow: 'hidden' }}>
