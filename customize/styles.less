@@ -1,0 +1,402 @@
+@import '~antd/dist/antd.less';
+@import '~nprogress/nprogress.css';
+// For the full set of variables
+// https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less
+
+h1, h2, h3, h4, h5, h6 { color: inherit; margin-bottom: 0; line-height: 1; }
+h6 { font-size: .9em; }
+h5 { font-size: 1em; }
+h4 { font-size: 1.2em; }
+h3 { font-size: 2em; }
+h2 { font-size: 2.8em; }
+h1 { font-size: 2.5em; }
+h1, h2, h3, h4{
+	font-family: 'Open Sans', sans-serif;	
+	color: @primary-color;
+	font-weight: bold;
+}
+// For the full set of variables
+// https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less
+@fontfamily : 'Lora',sans-serif;
+@font-size-base : 15px;
+@font-size-lg : @font-size-base;
+@font-size-sm : 13px;
+@text-color : #333;
+@primary-color : #333;
+@link-color : @primary-color;
+@link-hover-color : #f58913;
+@link-active-color : @primary-color;
+@link-decoration : none;
+@link-hover-decoration : none;
+@primary-bgcolor : #eeeeee;
+@white-color: #ffffff;
+@secondary-color: #fefff2;
+.bg-primary { background-color: @primary-color; }
+.color-primary { color: @primary-color; }
+.bg-secondary { background-color: @secondary-color; }
+.color-secondary { color: @secondary-color; }
+
+@default-padding: 40px; // general padding size
+.wrap { max-width: 1635px; margin: auto; }
+.pad, .pad-y, .pad-top { padding-top: @default-padding; }
+.pad, .pad-y, .pad-btm { padding-bottom: @default-padding; }
+.pad, .pad-x, .pad-left { padding-left: @default-padding; }
+.pad, .pad-x, .pad-right { padding-right: @default-padding; }
+
+.capitalize { text-transform: capitalize; }
+
+#nprogress {
+	.bar {
+		background: @secondary-color;
+		height: 5px;
+	}
+	.spinner-icon {
+		width: 24px;
+		height: 24px;
+		border: solid 3px transparent;
+		border-top-color: @secondary-color;
+		border-left-color: @secondary-color;
+	}
+	.peg {
+		box-shadow: 0 0 10px @secondary-color, 0 0 5px @secondary-color;
+	}
+	.spinner {
+		right: initial;
+		left: 20px;
+		top: 20px;
+	}
+}
+.ant-layout-header, .ant-layout {
+	background: transparent;
+}
+.ant-list-item-content {
+	width: 100%;
+}
+
+body, body * {
+	font-family: @font-family;
+}
+	img{
+	  max-width: 100%;
+	}
+	li{
+	  margin-bottom: 5px;
+  }
+  
+  .info-table {
+	margin-bottom: 30px;
+  }
+  .info-table th,
+  .info-table td {
+	border: 1px solid #fff;
+	padding: 10px;
+	text-align: center;
+  }
+   .info-table th {
+	background: #f3e161;
+	color: @primary-color;
+	text-transform: uppercase;
+  }
+  .info-table tr:first-child th {
+	background:#f3e161;
+  }
+  .info-table tr:nth-child(even) {
+	background: #fbf2fa;
+  }
+  .info-table tr:nth-child(odd) {
+	background: #eee2f1;
+  }
+  .success, .success p, .success .anticon {
+	  color: green;
+	  font-size: 16px;
+  }
+  .error, .error p, .error .anticon {
+	  color: red;
+  }
+#header{
+	border-bottom: 2px solid rgb(161, 72, 148);
+    background: rgb(255, 255, 255);
+}
+
+.ant-menu-horizontal {
+	float: right;
+	background: transparent;
+	width: '100%'; 
+	text-align: right;
+	margin-right: 15px;
+
+	.ant-menu-item{
+		padding: 0;
+
+		a{
+			text-transform: uppercase;
+			text-align: center;
+			padding: 4.8rem 1.5rem 0.7rem;
+			font-size: 18px;
+			line-height: 1.5;
+			color: #777;
+			display: inline-block;
+		}
+
+		a:hover{
+			background: #ffef43;
+			color: #9f2d94;
+		}
+
+		strong{
+			font-family: 'Open Sans', sans-serif !important;
+		}
+	}
+}
+
+.middle-container{
+	max-width: 1010px;
+	margin: auto;
+}
+
+.flex{
+	display: flex;
+}
+
+.y-padding{
+	padding-top: 3rem;
+	padding-bottom: 1rem;
+}
+
+.light-bg{
+	background: #fff;
+}
+
+.paragraph-content{
+	p{
+		font-family: @fontfamily;
+		font-size: 14.5px;
+		color: #333;
+	}
+
+	h3{
+		font-family: 'Open Sans';
+		font-size: 17px;
+		margin: 1em 0;
+		color: #333;
+		font-weight: 700;
+	}
+}
+
+.bg-white{
+	background: #fff;
+	position: relative;
+	font-family: 'Open Sans', sans-serif;
+	
+	.fullfill_con {
+    max-width: 1010px;
+    margin: auto;
+		position: relative;
+		padding-bottom: 4rem;
+    padding-top: 6rem;
+	}	
+
+	.row-fluid{
+		width: 100%;
+	}
+
+	h1{
+		color: #9f2d94;
+		font-size: 2em;
+		font-family: 'Open Sans', sans-serif !important;
+		margin: 0 0 1em;
+		font-weight: 700;
+
+		em{
+			font-style: italic;	
+			font-family: 'Open Sans', sans-serif !important;
+			letter-spacing: 2px;
+			font-size: 28px;
+			font-weight: 700;	
+		}
+	}
+
+	.justify {
+		text-align: justify;
+	}
+
+	p{
+		line-height: 1.8;
+	}
+}
+
+#page {
+	padding: 30px 0 10px;
+	h1{
+		font-size: 25px;
+		color: @primary-color;
+		margin: 30px 0 0;
+		font-weight: bold;
+	}
+	h2{
+		font-size: 20px;
+	}
+	h3{
+		font-size: 18px;
+	}
+	
+}
+
+.wrap {
+	max-width: 1010px;
+	margin: auto;
+	position: relative;
+}
+
+.main #footer h1 {
+	color: #fff;
+	text-align: center;
+	margin: 0 0 1em;
+}
+
+p{
+	line-height: 1.8;
+}
+
+.ant-menu-horizontal > .ant-menu-item, .ant-menu-horizontal > .ant-menu-submenu {
+	top: 0;
+}
+.ant-menu-submenu:hover{
+	background: #ffef43;
+	color: #9f2d94 !important;
+}
+
+.ant-menu-item a:hover{
+	background: #ffef43;
+	color: #9f2d94 !important;
+}
+
+.ant-menu li{
+	margin-bottom: unset;
+}
+
+//About Us Css Start//
+.h1-title{
+	color: #9f2d94;
+	margin: 0 0 1em;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	font-size: 2em;
+}
+
+.aboutus_container{
+	.pad-y, .pad-btm {
+		padding-bottom: 4rem;
+	}
+
+	.pad-y, .pad-top{
+		padding-top: 3rem;
+	}
+	h2{
+		font-family: 'Open Sans', sans-serif;
+		font-size: 1.5em;
+		margin: 0.83em 0;
+		font-weight: 700;
+	}
+
+	p{
+		line-height: 1.8;
+		margin: 1em 0;
+
+		.theme{
+			color: #9f2d94;
+		}
+
+		strong{
+			font-weight: 700;
+		}
+	}
+
+	#vision {
+		padding: 14em 2em;
+		box-sizing: border-box;
+		color: #fff;
+		text-align: center;
+		h1{
+			color: #fff;
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 700;
+			font-size: 2em;
+		}
+
+		p{
+			line-height: 1.8;
+			margin: 1em 0;
+		}
+	}
+}
+.ant-layout{
+	position: relative;
+}
+//About Us Css End//
+#navi{
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	z-index: 2;
+	top: 30px;
+}
+#navi a{
+	margin: 10px;
+	padding: 10px;
+	border: 1px solid #fff;
+	border-radius: 6px;
+	color: #fff;
+	&:hover{
+		background: @link-hover-color;
+	}
+}
+.destop-vision{
+	display: block;
+}
+
+.mobile-vision{
+	display: none;
+}
+.parallax { 
+	/* The image used */
+	background-image: url(/static/img/bg-vision.jpg);
+  
+	/* Set a specific height */
+	height: 500px; 
+  
+	/* Create the parallax scrolling effect */
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+  }
+.ant-layout-footer{
+	padding: 10px;
+    text-align: center;
+    background: #f0f2f5;
+}
+@media (max-width: 1680px) {
+	.wrap {
+		max-width: 100%;
+		width: 100%;
+		padding-left: @default-padding;
+		padding-right: @default-padding;
+	}
+
+	.ant-menu{
+		border-radius: unset;
+		background: transparent;
+
+		li{
+			margin: unset;
+			padding: unset;
+
+			a{
+				padding: 10px;
+			}
+		}
+	}
+}
+
+@import "../customize/responsive.less";

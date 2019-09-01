@@ -1,0 +1,41 @@
+{
+  "name": "bootcamp",
+  "description": "Li Yan Weather Forecast",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js"
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@fortawesome/fontawesome-svg-core": "^1.2.19",
+    "@fortawesome/free-brands-svg-icons": "^5.10.0",
+    "@fortawesome/free-solid-svg-icons": "^5.9.0",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "@zeit/next-less": "^1.0.1",
+    "@zeit/next-typescript": "^1.1.1",
+    "antd": "^3.20.5",
+    "aos": "^3.0.0-beta.6",
+    "babel-plugin-import": "^1.12.0",
+    "big.js": "^5.2.2",
+    "express": "^4.17.1",
+    "isomorphic-unfetch": "^3.0.0",
+    "moment": "^2.24.0",
+    "next": "^8.0.4",
+    "nprogress": "^0.2.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scroll": "^1.7.12"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@types/aos": "^3.0.1",
+    "@types/next": "^8.0.6",
+    "@types/next-server": "^8.1.2",
+    "@types/node": "^12.6.8",
+    "@types/styled-jsx": "^2.2.8",
+    "@types/webpack-env": "^1.14.0",
+    "less": "^3.9.0",
+    "typescript": "^3.5.3"
+  }
+}

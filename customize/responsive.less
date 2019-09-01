@@ -1,0 +1,398 @@
+@media screen {
+    @media (min-width: 1500px) {
+        #slide-dest{
+            top: 59%;
+        }
+    }
+    @media (max-width: 1500px) {
+    #slide-dest,#main_slider .caption{
+        width: 400px;
+        right: 10%;
+        top: 55%;
+    }
+    #slide-dest{
+        top: 68%;
+    }
+    }
+    @media (max-width: 1300px) {
+        #slide-dest{
+            top: 70%;
+        }
+        .middle-container {
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        //Menu Items start
+        .menu {
+                .ant-menu-submenu-title {
+                        padding: 5rem 0.8rem 0.3rem;
+                        font-size: 15px;
+                }
+
+                .ant-menu-item {
+                    a {
+                        padding: 5rem 0.8rem 0.3rem;
+                        font-size: 15px;
+                    }
+                }
+        }
+        //Menu Items end
+
+    }
+
+    @media (max-width: 1025px){
+        #header {
+            border-bottom: 0;
+            -webkit-box-shadow: 3px 8px 5px -8px rgba(128,128,128,1);
+            -moz-box-shadow: 3px 8px 5px -8px rgba(128,128,128,1);
+            box-shadow: 3px 8px 5px -8px rgba(128,128,128,1);
+        }
+        .ant-menu{
+            overflow: hidden;
+        }
+    }
+
+    @media (max-width: 992px){
+        .content_blk {
+            min-height: 400px;
+            padding: 1em;
+        }
+        .middle-container{
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        .logo{
+            display: flex;
+            background: #9F2D94;
+
+            a{
+                margin: 0 auto;
+
+                img{
+                    height: 80px;
+                }
+            }
+        }
+
+        .collapsed{
+            max-height: 0px;
+            transition: max-height 0.4s linear;
+        }
+
+        .collapsed.open{
+            max-height: 800px;
+        }
+        .ant-menu-submenu > .ant-menu,  .collapsed.open{
+            background: #eee;
+        }
+        .menu{
+
+            &:before{
+                content: 'MENU';
+                color:@primary-color;
+                text-transform: uppercase;
+                font-size: 15px;
+                font-weight: bold;
+                font-family: 'Open Sans';
+                margin: 1em;
+                position: absolute;
+                line-height: 10px;
+                z-index: 20;
+            }
+        }
+
+        .menu_toggle{
+            padding: 5px 20px;
+            float: right;
+            cursor: pointer;
+            font-size: 30px;
+            color: #9F2D94;
+            position: relative;
+            width: 100%;
+            z-index: 4;
+            text-align: right;
+            -webkit-box-shadow: 0 5px 2px -4px rgb(212, 212, 212);
+            -moz-box-shadow: 0 5px 2px -4px rgb(212, 212, 212);
+            box-shadow: 0 5px 2px -4px rgb(212, 212, 212);
+            background: #fff;
+            svg{
+                color: #d89fd5;
+                width: 0.67em!important;
+            }
+        }
+
+        .ant-menu:not(.ant-menu-horizontal) {
+            .ant-menu-submenu{
+                &:hover{
+                    background: transparent;
+                }
+                .ant-menu-submenu-title{
+                    text-align: center;
+                    font-weight: 700;
+                    padding: 0;
+                    font-family: 'Open Sans';
+                    font-size: 14.4px;
+                    color: #777;
+                    text-transform: uppercase;
+
+                    &:hover{
+                        background-color: #9F2D94;
+                        color: #fff;
+                    }
+
+                    .ant-menu-submenu-arrow{
+                        position: relative;
+                        display: inline-block;
+                        vertical-align: middle;
+                        top: -1px;
+                        right: -5px;
+                    }
+                }
+
+                .ant-menu-item{
+                    padding: 0;
+                    a{
+                        font-family: 'Open Sans';
+                        font-size: 14.4px;
+                        color: #777;
+                        text-transform: uppercase;
+                        
+                        &:hover{
+                            background-color: #9F2D94;
+                            color: #fff;
+                        }
+                    }
+                }
+            } 
+            
+            .ant-menu-item{
+                text-align: center;
+                padding: 0;
+
+                a{
+                    strong{
+                        font-family: 'Open Sans';
+                        font-size: 14.4px;
+                        color: #777;
+                        text-transform: uppercase;
+                    }
+                }
+
+                &:hover{
+                    background-color: #9F2D94;
+                    a{
+                        color: #fff;
+
+                        strong{
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+            
+            li{
+                a{
+                    padding: 0;
+                }
+            }
+            
+            .ant-menu-item-selected{
+                background-color: #9F2D94;
+
+                a{
+                    color: #fff !important;
+
+                    strong{
+                        color: #fff !important ;
+                    }
+                }
+
+                &:after{
+                    border-right: none;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 835px){
+        #top{
+            display: none;
+        }
+
+        .ant-menu.ant-menu-inline{
+            .ant-menu-item{
+                a{
+                    &:hover{
+                        background: #9F2D94;
+                        color: #fff!important;
+                    }
+                }
+            }
+            .ant-menu-item.res_contact{
+                display: block;
+                margin-bottom: 0;
+                .res_contact_list{
+                    i{
+                        font-size: 18px;
+                    }
+                    li{
+                        display: inline-block;
+                        width: 25%;
+                        background: #A66D9F;
+                        border-right: 1px solid #fff !important;
+
+                        a{
+                            color: #fff;
+
+                            &:active{
+                                color: #777;
+                            }
+
+                            &:hover{
+                                background: transparent;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 770px){        
+        .middle-container{
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        .destop-vision{
+            display: none !important;
+        }
+        
+        .mobile-vision{
+            display: block !important;
+        }
+        //Aboutus Start//
+        .mobile-bg{
+            background: url('https://cdn.net.in/lkchin/images/bg-vision.jpg')top center no-repeat;
+        }
+        //Aboutus End//
+
+        .bg-white{
+            .fullfill_con{
+                padding-top: 3rem;
+            }
+        }
+
+    }
+
+    @media (max-width: 767px){
+          
+        .tour_container{
+            .tour_box{
+                .box{
+                    height: auto;
+    
+                    .box-text{
+                        height: auto;
+                    }
+
+                    .article-desc{
+                        display: none;
+                    }
+
+                    .article-desc-res {
+                        display: block;
+                        color: #9f2d94;
+                        font-family: 'Open Sans', sans-serif;
+                    }
+                }
+
+                &:hover{
+                    .article-desc-res{
+                        color: #777;
+                    }
+                }
+            }
+        } 
+
+        .tour-packages{
+            h6{
+                display: none;
+            }
+            
+            .ant-select.custom_select {
+                margin: 6px 0px;
+            }
+        }
+
+        .right_tour_container{
+            #tour-categories{
+                color: #000;                
+            }
+
+            h1{
+                color: #000;
+            }
+        }
+
+        .article-container{
+            .article-item{
+                .box{
+                    height: auto;
+                }
+            }
+        }
+
+        #footer{
+            #footer-nav{
+                h3, p, a{
+                    text-align: center;
+                }
+
+                .social_links{
+                    text-align: center;
+                }
+            } 
+        } 
+    }
+
+    @media (max-width: 442px){
+
+        .m-hide{
+            display: none;
+        }
+
+        #top{
+            text-align: center; 
+            
+            .social_links {
+                display: none;
+            }
+        }
+
+        .social_links{
+            display: none;
+        }
+
+        .middle-container{
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        .destop-vision{
+            display: none !important;
+        }
+        
+        .mobile-vision{
+            display: block !important;
+        }
+        //Aboutus Start//
+        .mobile-bg{
+            background: url('https://cdn.net.in/lkchin/images/bg-vision.jpg')top center no-repeat;
+        }
+        //Aboutus End//
+
+    }
+}
