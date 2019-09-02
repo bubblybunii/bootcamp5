@@ -85,6 +85,10 @@ body, body * {
   
   .info-table {
 	margin-bottom: 30px;
+	width: 100%;
+	td{
+		color: #355fbd;
+	}
   }
   .info-table th,
   .info-table td {
@@ -105,6 +109,17 @@ body, body * {
   }
   .info-table tr:nth-child(odd) {
 	background: #eee2f1;
+  }
+  .temp{
+	margin: 0 15px 0;
+	color: #647fbb;
+	font-size: 20px;
+	&.max{
+		color: #ea6d48;
+	}
+	sup{
+		font-size: 12px;
+	}
   }
   .success, .success p, .success .anticon {
 	  color: green;
@@ -243,7 +258,7 @@ body, body * {
 }
 
 .wrap {
-	max-width: 1010px;
+	max-width: 1024px;
 	margin: auto;
 	position: relative;
 }
