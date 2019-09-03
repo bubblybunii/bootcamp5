@@ -7,79 +7,108 @@ const { TabPane } = Tabs;
 
 export default class extends React.PureComponent<any> {
   state = {
-	greeting:'',
-	result24: [],
-	resultTwoHours:[],
+    greeting: "",
+    result24: [],
+    resultTwoHours: [],
     resultFourDays: [],
     loading: false
   };
 
   componentDidMount() {
-	const d = new Date();
-	const time = d.getHours();
-		if (time < 12) {
-		this.setState({greeting:'Good morning!'})
-	  	}
-	  	if (time == 12 || time <= 18 ) {
-		this.setState({greeting:'Good Afternoon!'})
-	  	}
-	  	else {
-		this.setState({greeting:'Good Evening!'})
-	  	}
+    const d = new Date();
+    const time = d.getHours();
+    if (time < 12) {
+      this.setState({ greeting: "Good morning!" });
+    }
+    if (time == 12 || time < 18) {
+      this.setState({ greeting: "Good Afternoon!" });
+    } else {
+      this.setState({ greeting: "Good Evening!" });
+    }
     let today = moment(new Date()).format("YYYY-MM-DD");
-	Promise.all([
-		fetch( `https://api.data.gov.sg/v1/environment/24-hour-weather-forecast`).then(value => value.json()),
-		fetch( `https://api.data.gov.sg/v1/environment/2-hour-weather-forecast`).then(value => value.json()),
-		fetch( `https://api.data.gov.sg/v1/environment/4-day-weather-forecast?date=${today}`).then(value => value.json())
-		])
-		.then((value) => {
-			this.setState({
-			result24: value[0].items,
-			resultTwoHours: value[1],
-			resultFourDays: value[2].items
-			})
-		})
-		.catch((err) => {
-			console.log(err);
-		});
+    Promise.all([
+      fetch(
+        `https://api.data.gov.sg/v1/environment/24-hour-weather-forecast`
+      ).then(value => value.json()),
+      fetch(
+        `https://api.data.gov.sg/v1/environment/2-hour-weather-forecast`
+      ).then(value => value.json()),
+      fetch(
+        `https://api.data.gov.sg/v1/environment/4-day-weather-forecast?date=${today}`
+      ).then(value => value.json())
+    ])
+      .then(value => {
+        this.setState({
+          result24: value[0].items,
+          resultTwoHours: value[1],
+          resultFourDays: value[2].items
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
   weatherIcon(forecast) {
-    let icon = forecast
+    let icon = forecast;
     if (!!forecast && forecast.toLowerCase().includes("thundery")) {
       return (icon = "icon-thunder.png");
-	} 
-	else return (icon = "icon-cloud.png");
+    } else return (icon = "icon-cloud.png");
   }
 
   render() {
-
-	const { greeting,result24, resultTwoHours, resultFourDays } = this.state;
-	const today = !!result24 && result24[0] && result24[0]['general']
-	const listTwoHours = !!resultTwoHours['area_metadata'] && resultTwoHours['items'].map((areas, index) => <Fragment key={`area${index}`}>
-		 {areas["forecasts"].map((area, index) => 
-		 <tr key={`areadetails${index}`}>
-		<td>{<b>{area['area']}</b>}</td>
-		 <td>
-		 <Tooltip
-                placement="bottom"
-                title={area["forecast"]}
-                className="tooltip"
-              >
-			 <img src={`../static/img/${this.weatherIcon(area["forecast"])}`}/>
-			 </Tooltip>
-			 </td>
-		 </tr>
-		 )}
-		  <tr>
-          <td colSpan={4}>
-            Last updated:{" "}
-            {moment(areas["updated_timestamp"]).format(
-              `D MMM YYYY (ddd) H:MM A`
-            )}
+    const { greeting, result24, resultTwoHours, resultFourDays } = this.state;
+    const listPeriod =
+      !!result24 &&
+      result24[0] &&
+      result24[0]["periods"].map((period, index) => (
+        <tr key={`period${index}`}>
+          <td>
+            {moment(period["time"]["start"]).format( `D MMM YYYY (ddd) H:MM A`)} to {moment(period["time"]["end"]).format( `D MMM YYYY (ddd) H:MM A`)}
+          </td>
+          <td>
+            central:{period["regions"]["central"]}
+            <br />
+            east:{period["regions"]["east"]}
+            <br />
+            north:{period["regions"]["north"]}
+            <br />
+            south:{period["regions"]["south"]}
+            <br />
+            west:{period["regions"]["west"]}
           </td>
         </tr>
-		</Fragment>
-	)
+      ));
+
+    const listTwoHours =
+      !!resultTwoHours["area_metadata"] &&
+      resultTwoHours["items"].map((areas, index) => (
+        <Fragment key={`area${index}`}>
+          {areas["forecasts"].map((area, index) => (
+            <tr key={`areadetails${index}`}>
+              <td>{<b>{area["area"]}</b>}</td>
+              <td>
+                <Tooltip
+                  placement="bottom"
+                  title={area["forecast"]}
+                  className="tooltip"
+                >
+                  <img
+                    src={`../static/img/${this.weatherIcon(area["forecast"])}`}
+                  />
+                </Tooltip>
+              </td>
+            </tr>
+          ))}
+          <tr>
+            <td colSpan={4}>
+              Last updated:{" "}
+              {moment(areas["updated_timestamp"]).format(
+                `D MMM YYYY (ddd) H:MM A`
+              )}
+            </td>
+          </tr>
+        </Fragment>
+      ));
 
     const listFourDays = resultFourDays.map((forecast, index) => (
       <Fragment key={`date${index}`}>
@@ -141,38 +170,79 @@ export default class extends React.PureComponent<any> {
       </Fragment>
     ));
 
-    console.log(!!result24 && result24[0] && result24[0]['general'] && result24[0]['general'] );
     return (
       <section id="home">
         <article className="wrap">
-			
-			
           <Tabs type="card">
-		  <TabPane tab="24 HOUR FORECAST" key="0">
-			<Row type="flex" justify="space-between" align="middle">
-				<Col md={24} lg={12}>
-				<div className="center-block">
-				<section id="intro">
-				<h1><img src={`../static/img/${this.weatherIcon(today && result24[0]['general']['forecast'])}`}/> {greeting}</h1>
-			<h2>
-		{today && result24[0]['general']['temperature'] && result24[0]['general']['temperature']['high']}°C
-			</h2>
-			
-				</section>
-		
-			</div>
-				</Col>
-			</Row>
-		 
-		</TabPane>
+            <TabPane tab="24 HOUR FORECAST" key="0">
+              <div className="center-block">
+                <section id="intro">
+                  <h1>
+                    <img
+                      src={`../static/img/${this.weatherIcon(
+                        (((!!result24 && result24[0]) || {}).general || {})
+                          .forecast
+                      )}`}
+                    />{" "}
+                    {greeting}
+                  </h1>
+                  <h2>
+                    {
+                      (((result24[0] || {}).general || {}).temperature || {})
+                        .high
+                    }
+                    °C
+                  </h2>
+                  {<img src={`../static/img/icon-humid.png`} />}
+                  <sup>High</sup>
+                  {
+                    (
+                      ((result24[0] || {}).general || {}).relative_humidity ||
+                      {}
+                    ).high
+                  }
+                  % <sup>Low</sup>
+                  {
+                    (
+                      ((result24[0] || {}).general || {}).relative_humidity ||
+                      {}
+                    ).low
+                  }
+                  %{<img src={`../static/img/icon-wind.png`} />}
+                  {
+                    (
+                      (((result24[0] || {}).general || {}).wind || {}).speed ||
+                      {}
+                    ).high
+                  }
+                  <sup>km/h</sup>
+                  {
+                    (
+                      (((result24[0] || {}).general || {}).wind || {}).speed ||
+                      {}
+                    ).low
+                  }
+                  <sup>km/h</sup>
+                  <table className="info-table">
+                    <tbody>
+                      <tr>
+                        <th>PERIOD</th>
+                        <th>WEATHER</th>
+                      </tr>
+                      {listPeriod}
+                    </tbody>
+                  </table>
+                </section>
+              </div>
+            </TabPane>
             <TabPane tab="2 HOUR FORECAST" key="1">
-			<table className="info-table">
+              <table className="info-table">
                 <tbody>
                   <tr>
                     <th>AREA</th>
                     <th>WEATHER</th>
                   </tr>
-				  {listTwoHours}
+                  {listTwoHours}
                 </tbody>
               </table>
             </TabPane>
