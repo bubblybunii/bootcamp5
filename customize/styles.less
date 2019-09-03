@@ -82,9 +82,58 @@ body, body * {
 	li{
 	  margin-bottom: 5px;
   }
-  
+.center-block{
+	text-align: center;
+	margin: auto;
+}
+#home{
+	background: #fff url(/static/img/bg.jpg);
+    min-height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+	.wrap{
+		padding-top: 150px;
+	}
+	.ant-tabs-bar{
+		border: 0;
+		margin: 0;
+	}
+	.ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-nav-container{
+		height: auto;
+	}
+	.ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab {
+		color: #999;
+		background: #d2d2d2;
+		height: auto;
+		font-size: 16px;
+		padding: 10px 25px;
+		font-weight: bold;
+	}
+	.ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab-active {
+		color: #FFF;
+		background: #5d77bf;
+	}
+	#intro{
+		padding: 30px;
+	}
+  }
+  .ant-tabs-content{
+	  background: #fff;
+  }
+  .tooltip{
+	  cursor: pointer;
+  }
+  .ant-tooltip-placement-bottom .ant-tooltip-arrow, .ant-tooltip-placement-bottomLeft .ant-tooltip-arrow, .ant-tooltip-placement-bottomRight .ant-tooltip-arrow{
+	border-top-color: rgba(193, 110, 61, 0.95);
+    border-left-color:rgba(193, 110, 61, 0.95);
+  }
+  .ant-tooltip-inner {
+	background-color: rgba(193, 110, 61, 0.95);
+  }
   .info-table {
-	margin-bottom: 30px;
+	margin-bottom: 50px;
 	width: 100%;
 	td{
 		color: #355fbd;
@@ -97,18 +146,19 @@ body, body * {
 	text-align: center;
   }
    .info-table th {
-	background: #f3e161;
+	background: #676767;
 	color: @primary-color;
 	text-transform: uppercase;
+	color: #fff;
   }
   .info-table tr:first-child th {
-	background:#f3e161;
+	background:#676767;
   }
   .info-table tr:nth-child(even) {
-	background: #fbf2fa;
+	background: #f1f0eb;
   }
   .info-table tr:nth-child(odd) {
-	background: #eee2f1;
+	background: #fdfdfd;
   }
   .temp{
 	margin: 0 15px 0;
@@ -357,11 +407,16 @@ p{
 	top: 30px;
 }
 #navi a{
+	font-family: 'Sansita', sans-serif;	
+	display: inline-block;
 	margin: 10px;
-	padding: 10px;
+	padding: 10px 15px;
 	border: 1px solid #fff;
 	border-radius: 6px;
 	color: #fff;
+	text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 17px;
 	&:hover{
 		background: @link-hover-color;
 	}
@@ -374,13 +429,8 @@ p{
 	display: none;
 }
 .parallax { 
-	/* The image used */
 	background-image: url(/static/img/bg-vision.jpg);
-  
-	/* Set a specific height */
 	height: 500px; 
-  
-	/* Create the parallax scrolling effect */
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
