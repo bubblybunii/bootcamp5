@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "NODE_ENV=production node server.js",
+    "update-weather-static": "ts-node weather-static.ts"
   },
   "dependencies": {
     "@babel/plugin-proposal-decorators": "^7.4.4",
@@ -25,7 +26,8 @@
     "nprogress": "^0.2.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scroll": "^1.7.12"
+    "react-scroll": "^1.7.12",
+    "ts-node": "^8.3.0"
   },
   "license": "ISC",
   "devDependencies": {

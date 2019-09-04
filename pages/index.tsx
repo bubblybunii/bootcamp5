@@ -2,15 +2,18 @@ import React, { Fragment } from "react";
 import Router from "next/router";
 import { Row, Col, Button, Tooltip, Tabs } from "antd";
 import moment from "moment";
+import { data24Hour } from "../customize/result-24hour";
+import { data2Hour } from "../customize/result-2hour";
+import { data4Days } from "../customize/result-4days";
 
 const { TabPane } = Tabs;
 
 export default class extends React.PureComponent<any> {
   state = {
     greeting: "",
-    result24: [],
-    resultTwoHours: [],
-    resultFourDays: [],
+    result24: data24Hour.items,
+    resultTwoHours: data2Hour,
+    resultFourDays: data4Days.items,
     loading: false
   };
 
@@ -25,27 +28,6 @@ export default class extends React.PureComponent<any> {
     } else {
       this.setState({ greeting: "Good Evening!" });
     }
-    Promise.all([
-      fetch(
-        `https://api.data.gov.sg/v1/environment/24-hour-weather-forecast`
-      ).then(value => value.json()),
-      fetch(
-        `https://api.data.gov.sg/v1/environment/2-hour-weather-forecast`
-      ).then(value => value.json()),
-      fetch(
-        `https://api.data.gov.sg/v1/environment/4-day-weather-forecast`
-      ).then(value => value.json())
-    ])
-      .then(value => {
-        this.setState({
-          result24: value[0].items,
-          resultTwoHours: value[1],
-          resultFourDays: value[2].items
-        });
-      })
-      .catch(err => {
-        console.log(err);
-      });
   }
   weatherIcon(forecast) {
     let icon = forecast;
@@ -69,7 +51,9 @@ export default class extends React.PureComponent<any> {
       result24[0]["periods"].map((period, index) => (
         <tr key={`period${index}`}>
           <td>
-            {this.formatDateTime(period["time"]["start"])}<br /> to<br />
+            {this.formatDateTime(period["time"]["start"])}
+            <br /> to
+            <br />
             {this.formatDateTime(period["time"]["end"])}
           </td>
           <td>
@@ -227,103 +211,88 @@ export default class extends React.PureComponent<any> {
 
     return (
       <section id="home">
+        {console.log(  result24[0]['general']['forecast'])}
         <article className="wrap">
           <Tabs type="card">
             <TabPane tab="24 HOUR FORECAST" key="0">
               <div className="center-block">
                 <section id="intro">
-                  <h1>
-                    {greeting}
-                  </h1>
+                  <h1>{greeting}</h1>
                   <article className="bg-border">
-                  <img className="big"
+                    <img
+                      className="big"
                       src={`../static/img/${this.weatherIcon(
-                        (((!!result24 && result24[0]) || {}).general || {})
-                          .forecast
+                        result24[0]['general']['forecast']
                       )}`}
                     />
-                  <h4>
-                    <span>
-                    <sup className="max">High </sup>
-                    {
-                      (((result24[0] || {}).general || {}).temperature || {})
-                        .high
-                    }
-                    °C
-                    </span>
-                    <span>
-                    <sup>Low</sup>
-                    {
-                      (((result24[0] || {}).general || {}).temperature || {})
-                        .low
-                    }
-                    °C
-                    </span>
-                  </h4>
+                    <h4>
+                      <span>
+                        <sup className="max">High </sup>
+                        {
+                          result24[0]['general']['temperature']['high']
+                        }
+                        °C
+                      </span>
+                      <span>
+                        <sup>Low</sup>
+                        {
+                           result24[0]['general']['temperature']['low']
+                        }
+                        °C
+                      </span>
+                    </h4>
                   </article>
                   <div className="small">
                     <span>
-                  {<img src={`../static/img/icon-humid.png`} />}
-                  <sup className="temp max">High </sup>
-                  {
-                    (
-                      ((result24[0] || {}).general || {}).relative_humidity ||
-                      {}
-                    ).high
-                  }
-                  % <sup className="temp">Low </sup>
-                  {
-                    (
-                      ((result24[0] || {}).general || {}).relative_humidity ||
-                      {}
-                    ).low
-                  }
-                  %
-                  </span>
-                  <span>
-                  {<img src={`../static/img/icon-wind.png`} />}&nbsp;
-                  {
-                    (
-                      (((result24[0] || {}).general || {}).wind || {}).speed ||
-                      {}
-                    ).high
-                  }
-                  <sup className="temp max"> km/h</sup>
-                  {
-                    (
-                      (((result24[0] || {}).general || {}).wind || {}).speed ||
-                      {}
-                    ).low
-                  }
-                  <sup className="temp"> km/h</sup>
-                  </span>
+                      {<img src={`../static/img/icon-humid.png`} />}
+                      <sup className="temp max">High </sup>
+                      {
+                       result24[0]['general']['relative_humidity']['high']
+                      }
+                      % <sup className="temp">Low </sup>
+                      {
+                        result24[0]['general']['relative_humidity']['low']
+                      }
+                      %
+                    </span>
+                    <span>
+                      {<img src={`../static/img/icon-wind.png`} />}&nbsp;
+                      {
+                       result24[0]['general']['wind']['speed']['high']
+                      }
+                      <sup className="temp max"> km/h</sup>
+                      {
+                          result24[0]['general']['wind']['speed']['low']
+                      }
+                      <sup className="temp"> km/h</sup>
+                    </span>
                   </div>
-                  </section>
-                  <table className="info-table">
-                    <tbody>
-                      <tr>
-                        <th rowSpan={2}>PERIOD</th>
-                        <th colSpan={5}>WEATHER</th>
-                      </tr>
-                      <tr>
-                        <th>Central</th>
-                         <th>North</th>
-                         <th>South</th>
-                         <th>East</th>
-                         <th>West</th>
-                      </tr>
+                </section>
+                <table className="info-table">
+                  <tbody>
+                    <tr>
+                      <th rowSpan={2}>PERIOD</th>
+                      <th colSpan={5}>WEATHER</th>
+                    </tr>
+                    <tr>
+                      <th>Central</th>
+                      <th>North</th>
+                      <th>South</th>
+                      <th>East</th>
+                      <th>West</th>
+                    </tr>
 
-                      {listPeriod}
-                      <tr>
-                        <td colSpan={6}>
-                          Last updated:{" "}
-                          {this.formatDateTime(
-                            !!result24 && result24["update_timestamp"]
-                          )}
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+                    {listPeriod}
+                    <tr>
+                      <td colSpan={6}>
+                        Last updated:{" "}
+                        {this.formatDateTime(
+                          !!result24 && result24["update_timestamp"]
+                        )}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </TabPane>
             <TabPane tab="2 HOUR FORECAST" key="1">
