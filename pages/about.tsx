@@ -1,57 +1,95 @@
-import React from 'react'
-import { Row, Col} from 'antd'
-import Link from 'next/link'
-import AOS from 'aos'
+import React from "react";
+import { Row, Col, Icon } from "antd";
+import Link from "next/link";
+import AOS from "aos";
+import Router from "next/router";
 
-export default class extends React.PureComponent<any>{
-    componentDidMount(){
-        AOS.init({
-            duration : 500
-        })
-    }
-    render(){
-        const aboutus_img = '../static/img/bg-vision.jpg'
-        return(
-            <div>
-                <Row className={'aboutus_container'}>
-                    <Col span={24} className={'mobile-vision'}>                    
-                        <div className={'mobile-bg'}>                   
-                            <Row className={'middle-container'} id={'vision'}>
-                                <Col className="wrap">
-                                    <h1 data-aos="fade-up" className="aos-init aos-animate">Vision: <i>“To fulfill everyone’s travel dreams and expand your horizon of the world.”</i></h1>
-                                    <p data-aos="fade-in" className="aos-init aos-animate">In the internet age where information overload may cause a problem with tour planning, we at Ik Chin will provide our experience to help travelers make the better choice. Every journey is special and unique in its experience thus we at IkChin make it our mission “ To offer unique, quality and memorable travel experiences. Ensuring safety of our customers is always our top priority”.</p>
-                                </Col>
-                            </Row>                        
-                        </div>  
+export default class extends React.PureComponent<any> {
+  componentDidMount() {
+    AOS.init({
+      duration: 500
+    });
+  }
+  render() {
+    return (
+      <div>
+        <Row className={"aboutus_container"}>
+          <Col span={24}>
+            <section className="parallax">
+              <Row className={"middle-container"} id={"vision"}>
+                <Col className="wrap">
+                  <h1 data-aos="fade-up" className="aos-init aos-animate">
+                    Welcome!
+                  </h1>
+                  <p data-aos="fade-in" className="aos-init aos-animate">
+                    Shine a light on people & technology making our world
+                    better, lets code for good.
+                  </p>
+                </Col>
+              </Row>
+            </section>
+          </Col>
+          <Col span={24}>
+            <Row className={"middle-container"}>
+              <Col className="pad-y">
+                <Row gutter={16} type="flex" justify="space-between">
+                  <div className={"pagewrapper"}>
+                    <Col className={"pagecontent"} sm={24} lg={16}>
+                      <h1 className={"h1-title"}>About Me</h1>
+                      <p>
+                        Li Yan is currently a Digital Evangelist in a local
+                        travel technology startup helping travel agencies
+                        transform and grow their business on the eCommerce
+                        space. She love to see good design come to life and
+                        believe that with people at its heart, technology can
+                        create great social impact to help others and make this
+                        world a better place. She hopes for an opportunity to be
+                        part of this meaningful project to learn from fellow
+                        mentors & coaches, and at the same time level up her
+                        technical skills to contribute to a greater good.
+                      </p>
+                      <p>
+                        Beside being passionate about front end web development
+                        + UI/UX, she also enjoys dancing & a zen yoga stretch
+                        after a long day of staring at the screen.
+                      </p>
+                      <p><b>Why choose Li Yan?</b></p>
+                      <ul>
+                        <li> <Icon type="caret-right" /> Good knowledge in HTML & CSS</li>
+
+                        <li>
+                        <Icon type="caret-right" /> Completed Modern Javascript course on Udemy,
+                          self-learnt ReactJS
+                        </li>
+
+                        <li><Icon type="caret-right" /> Committed & Responsible team player </li>
+
+                        <li><Icon type="caret-right" /> Keep Calm & Yoga with Li Yan 😛 </li>
+                      </ul>
+                      Just kidding, time to check out{" "}
+                      <a
+                        onClick={() => {
+                          Router.push("/");
+                        }}
+                      >
+                        my technical task
+                      </a>
+                      ...
                     </Col>
-                    <Col span={24} className={'destop-vision'}>                    
-                        <section className="parallax">            
-                            <Row className={'middle-container'} id={'vision'}>
-                                <Col className="wrap">
-                                    <h1 data-aos="fade-up" className="aos-init aos-animate">Vision: <i>“To fulfill everyone’s travel dreams and expand your horizon of the world.”</i></h1>
-                                    <p data-aos="fade-in" className="aos-init aos-animate">In the internet age where information overload may cause a problem with tour planning, we at Ik Chin will provide our experience to help travelers make the better choice. Every journey is special and unique in its experience thus we at IkChin make it our mission “ To offer unique, quality and memorable travel experiences. Ensuring safety of our customers is always our top priority”.</p>
-                                </Col>
-                            </Row>                        
-                        </section>
+                    <Col className={"pagecontent"} sm={24} lg={8}>
+                        <div id="pic-wrap">
+                        <div id="pic">
+                      <img src="../static/img/liyan.jpg" />
+                      </div>
+                      </div>
                     </Col>
-                    <Col span={24}>
-                        <Row className={'middle-container'}>
-                            <Col className="pad-y">
-                                <Row>
-                                    <div className={'pagewrapper'}>
-                                        <Col className={'pagecontent'}>
-                                            <h1 className={'h1-title'}>Our Products</h1>
-                                            <p>With more than 20 years of experience in travel planning in Asia, we provide and plan quality travel products to countries in the Asian region. As such, we provide tour planning and tour arrangements (flight tickets, hotels, transport and tours) for many countries all over Asia.</p>
-                                            <p>Our <strong className="theme">leisure tours</strong> selection shows our available of the shelf products which also allows for customization to personalize travels to your needs. This will ensure the flexibility and exclusivity you need for your tours.</p>
-                                            <p>Over the years, we also had the privilege to join in pilgrimage to Buddhist sites around Asia. Our <strong className="theme">pilgrimage tours</strong> section displays a list of tours you can look at to fulfill your interest in Buddhism and its history.</p>        
-                                        </Col>
-                                    </div>
-                                </Row>
-                            </Col>
-                        </Row>
-                    </Col>
+                  </div>
                 </Row>
-            </div>
-        )
-    }
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+      </div>
+    );
+  }
 }

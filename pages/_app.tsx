@@ -120,8 +120,8 @@ export default class MyApp extends App<any> {
 							<p><a onClick={() => {
 								Router.push('/about')
 							}}
-							>About Li Yan</a> <a onClick={() => Router.push('/about')}
-							>Weather Forecast</a></p>
+							>About Li Yan</a> 
+							<a onClick={() => Router.push('/')}>Weather Forecast</a></p>
 						</Header>
 						<Content>
 							{this.state.hasError
