@@ -25,7 +25,6 @@ export default class extends React.PureComponent<any> {
     } else {
       this.setState({ greeting: "Good Evening!" });
     }
-    let today = moment(new Date()).format("YYYY-MM-DD");
     Promise.all([
       fetch(
         `https://api.data.gov.sg/v1/environment/24-hour-weather-forecast`
@@ -34,7 +33,7 @@ export default class extends React.PureComponent<any> {
         `https://api.data.gov.sg/v1/environment/2-hour-weather-forecast`
       ).then(value => value.json()),
       fetch(
-        `https://api.data.gov.sg/v1/environment/4-day-weather-forecast?date=${today}`
+        `https://api.data.gov.sg/v1/environment/4-day-weather-forecast`
       ).then(value => value.json())
     ])
       .then(value => {
@@ -52,9 +51,16 @@ export default class extends React.PureComponent<any> {
     let icon = forecast;
     if (!!forecast && forecast.toLowerCase().includes("thundery")) {
       return (icon = "icon-thunder.png");
+    } else if (!!forecast && forecast.toLowerCase().includes("windy")) {
+      return (icon = "icon-windy.png");
+    } else if (!!forecast && forecast.toLowerCase().includes("cloudy")) {
+      return (icon = "icon-cloudy.png");
     } else return (icon = "icon-cloud.png");
   }
-
+  formatDateTime(date) {
+    const formatted = moment(date).format(`D MMM YYYY (ddd) H:MM A`);
+    return formatted;
+  }
   render() {
     const { greeting, result24, resultTwoHours, resultFourDays } = this.state;
     const listPeriod =
@@ -63,18 +69,83 @@ export default class extends React.PureComponent<any> {
       result24[0]["periods"].map((period, index) => (
         <tr key={`period${index}`}>
           <td>
-            {moment(period["time"]["start"]).format( `D MMM YYYY (ddd) H:MM A`)} to {moment(period["time"]["end"]).format( `D MMM YYYY (ddd) H:MM A`)}
+            {this.formatDateTime(period["time"]["start"])}<br /> to<br />
+            {this.formatDateTime(period["time"]["end"])}
           </td>
           <td>
-            central:{period["regions"]["central"]}
-            <br />
-            east:{period["regions"]["east"]}
-            <br />
-            north:{period["regions"]["north"]}
-            <br />
-            south:{period["regions"]["south"]}
-            <br />
-            west:{period["regions"]["west"]}
+            <Tooltip
+              placement="bottom"
+              title={period["regions"]["central"]}
+              className="tooltip"
+            >
+              {
+                <img
+                  src={`../static/img/${this.weatherIcon(
+                    period["regions"]["central"]
+                  )}`}
+                />
+              }
+            </Tooltip>
+          </td>
+          <td>
+            <Tooltip
+              placement="bottom"
+              title={period["regions"]["east"]}
+              className="tooltip"
+            >
+              {
+                <img
+                  src={`../static/img/${this.weatherIcon(
+                    period["regions"]["east"]
+                  )}`}
+                />
+              }
+            </Tooltip>
+          </td>
+          <td>
+            <Tooltip
+              placement="bottom"
+              title={period["regions"]["north"]}
+              className="tooltip"
+            >
+              {
+                <img
+                  src={`../static/img/${this.weatherIcon(
+                    period["regions"]["north"]
+                  )}`}
+                />
+              }
+            </Tooltip>
+          </td>
+          <td>
+            <Tooltip
+              placement="bottom"
+              title={period["regions"]["south"]}
+              className="tooltip"
+            >
+              {
+                <img
+                  src={`../static/img/${this.weatherIcon(
+                    period["regions"]["south"]
+                  )}`}
+                />
+              }
+            </Tooltip>
+          </td>
+          <td>
+            <Tooltip
+              placement="bottom"
+              title={period["regions"]["central"]}
+              className="tooltip"
+            >
+              {
+                <img
+                  src={`../static/img/${this.weatherIcon(
+                    period["regions"]["west"]
+                  )}`}
+                />
+              }
+            </Tooltip>
           </td>
         </tr>
       ));
@@ -99,14 +170,6 @@ export default class extends React.PureComponent<any> {
               </td>
             </tr>
           ))}
-          <tr>
-            <td colSpan={4}>
-              Last updated:{" "}
-              {moment(areas["updated_timestamp"]).format(
-                `D MMM YYYY (ddd) H:MM A`
-              )}
-            </td>
-          </tr>
         </Fragment>
       ));
 
@@ -127,7 +190,7 @@ export default class extends React.PureComponent<any> {
                   />
                 }
                 <span className="temp max">
-                  <sup>Max </sup>
+                  <sup>High </sup>
                   {date["temperature"]["high"]}°C
                 </span>
                 <span className="temp">
@@ -159,14 +222,6 @@ export default class extends React.PureComponent<any> {
             </td>
           </tr>
         ))}
-        <tr>
-          <td colSpan={4}>
-            Last updated:{" "}
-            {moment(forecast["updated_timestamp"]).format(
-              `D MMM YYYY (ddd) H:MM A`
-            )}
-          </td>
-        </tr>
       </Fragment>
     ));
 
@@ -178,61 +233,97 @@ export default class extends React.PureComponent<any> {
               <div className="center-block">
                 <section id="intro">
                   <h1>
-                    <img
+                    {greeting}
+                  </h1>
+                  <article className="bg-border">
+                  <img className="big"
                       src={`../static/img/${this.weatherIcon(
                         (((!!result24 && result24[0]) || {}).general || {})
                           .forecast
                       )}`}
-                    />{" "}
-                    {greeting}
-                  </h1>
-                  <h2>
+                    />
+                  <h4>
+                    <span>
+                    <sup className="max">High </sup>
                     {
                       (((result24[0] || {}).general || {}).temperature || {})
                         .high
                     }
                     °C
-                  </h2>
+                    </span>
+                    <span>
+                    <sup>Low</sup>
+                    {
+                      (((result24[0] || {}).general || {}).temperature || {})
+                        .low
+                    }
+                    °C
+                    </span>
+                  </h4>
+                  </article>
+                  <div className="small">
+                    <span>
                   {<img src={`../static/img/icon-humid.png`} />}
-                  <sup>High</sup>
+                  <sup className="temp max">High </sup>
                   {
                     (
                       ((result24[0] || {}).general || {}).relative_humidity ||
                       {}
                     ).high
                   }
-                  % <sup>Low</sup>
+                  % <sup className="temp">Low </sup>
                   {
                     (
                       ((result24[0] || {}).general || {}).relative_humidity ||
                       {}
                     ).low
                   }
-                  %{<img src={`../static/img/icon-wind.png`} />}
+                  %
+                  </span>
+                  <span>
+                  {<img src={`../static/img/icon-wind.png`} />}&nbsp;
                   {
                     (
                       (((result24[0] || {}).general || {}).wind || {}).speed ||
                       {}
                     ).high
                   }
-                  <sup>km/h</sup>
+                  <sup className="temp max"> km/h</sup>
                   {
                     (
                       (((result24[0] || {}).general || {}).wind || {}).speed ||
                       {}
                     ).low
                   }
-                  <sup>km/h</sup>
+                  <sup className="temp"> km/h</sup>
+                  </span>
+                  </div>
+                  </section>
                   <table className="info-table">
                     <tbody>
                       <tr>
-                        <th>PERIOD</th>
-                        <th>WEATHER</th>
+                        <th rowSpan={2}>PERIOD</th>
+                        <th colSpan={5}>WEATHER</th>
                       </tr>
+                      <tr>
+                        <th>Central</th>
+                         <th>North</th>
+                         <th>South</th>
+                         <th>East</th>
+                         <th>West</th>
+                      </tr>
+
                       {listPeriod}
+                      <tr>
+                        <td colSpan={6}>
+                          Last updated:{" "}
+                          {this.formatDateTime(
+                            !!result24 && result24["update_timestamp"]
+                          )}
+                        </td>
+                      </tr>
                     </tbody>
                   </table>
-                </section>
               </div>
             </TabPane>
             <TabPane tab="2 HOUR FORECAST" key="1">
@@ -243,6 +334,15 @@ export default class extends React.PureComponent<any> {
                     <th>WEATHER</th>
                   </tr>
                   {listTwoHours}
+                  {!!resultTwoHours["area_metadata"] &&
+                    resultTwoHours["items"].map((areas, index) => (
+                      <tr key={`update2${index}`}>
+                        <td colSpan={4}>
+                          Last updated:{" "}
+                          {this.formatDateTime(areas["updated_timestamp"])}
+                        </td>
+                      </tr>
+                    ))}
                 </tbody>
               </table>
             </TabPane>
@@ -256,6 +356,14 @@ export default class extends React.PureComponent<any> {
                     <th>WIND SPEED</th>
                   </tr>
                   {listFourDays}
+                  {resultFourDays.map((forecast, index) => (
+                    <tr key={`update4${index}`}>
+                      <td colSpan={4}>
+                        Last updated:{" "}
+                        {this.formatDateTime(forecast["updated_timestamp"])}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </TabPane>

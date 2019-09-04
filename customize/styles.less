@@ -96,6 +96,24 @@ body, body * {
 	.wrap{
 		padding-top: 150px;
 	}
+	h1{
+		color: #508ec3;
+		font-family: 'Sansita', sans-serif;
+		text-transform: uppercase;
+		font-size: 28px;
+		margin-bottom: 20px;
+		letter-spacing: 1px;
+	}
+	h4{
+		color: #e69b11;
+		font-size: 23px;
+		sup{
+			font-size: 12px;
+		}
+		span{
+			margin: 0 10px;
+		}
+	}
 	.ant-tabs-bar{
 		border: 0;
 		margin: 0;
@@ -116,7 +134,42 @@ body, body * {
 		background: #5d77bf;
 	}
 	#intro{
-		padding: 30px;
+		padding: 50px 10px;
+		.bg-border{
+			background: #fbf2ea;
+			display: inline-block;
+			padding: 0 24px 18px;
+			border-radius: 10px;
+		}
+		h4{
+			font-size: 25px;
+		}
+		h4 sup{
+			font-size: 12px;
+			top: -10px;
+			margin-right: 4px;
+			display: inline-block;
+		}
+		.temp{
+			margin: 0;
+			font-size: 12px;
+		}
+		.small{
+			margin: 10px auto 0;
+			color: #808080;
+			span{
+				margin: 0 5px;
+				sup{
+					font-size: 10px;
+				}
+			}
+		}
+		img{
+			width: 30px;
+		}
+		img.big{
+			width: 65px;
+		}
 	}
   }
   .ant-tabs-content{
@@ -154,23 +207,28 @@ body, body * {
   .info-table tr:first-child th {
 	background:#676767;
   }
+  .info-table tr:nth-child(2) th{
+	background: #c38f69;
+}
   .info-table tr:nth-child(even) {
-	background: #f1f0eb;
+	background: #f5f2e9;
   }
   .info-table tr:nth-child(odd) {
 	background: #fdfdfd;
   }
+  .temp, h4 sup{
+	color: #8aaaf1;
+  }
   .temp{
 	margin: 0 15px 0;
-	color: #647fbb;
 	font-size: 20px;
-	&.max{
-		color: #ea6d48;
-	}
 	sup{
 		font-size: 12px;
 	}
   }
+  .max{
+	color: #ea6d48;
+}
   .success, .success p, .success .anticon {
 	  color: green;
 	  font-size: 16px;
@@ -247,7 +305,6 @@ body, body * {
 		font-weight: 700;
 	}
 }
-
 .bg-white{
 	background: #fff;
 	position: relative;
