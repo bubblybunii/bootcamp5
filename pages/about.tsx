@@ -9,6 +9,7 @@ export default class extends React.PureComponent<any> {
     AOS.init({
       duration: 1200
     });
+    window.scrollTo(0, 0);
   }
   render() {
     return (
@@ -21,7 +22,7 @@ export default class extends React.PureComponent<any> {
                   <h1 data-aos="flip-left">
                     Welcome!
                   </h1>
-                  <p data-aos="flip-up" data-aos-delay="300">
+                  <p data-aos="fade" data-aos-delay="200">
                     Shine a light on people & technology making our world
                     better, lets code for good.
                   </p>
@@ -32,10 +33,10 @@ export default class extends React.PureComponent<any> {
           <Col span={24}>
             <Row className={"middle-container"}>
               <Col className="pad-y">
-                <Row gutter={16} type="flex" justify="space-between">
+                <Row gutter={24} type="flex" justify="space-between">
                   <div className={"pagewrapper"}>
-                    <Col className={"pagecontent"} sm={24} lg={16}>
-                      <h1 className={"h1-title aos-init aos-animate"} data-aos="fade-right">About Me</h1>
+                    <Col className={"pagecontent"} sm={24} lg={16} data-aos="fade-up" data-aos-delay="500">
+                      <h1 className={"h1-title"}>About Me</h1>
                       <p>
                         Li Yan is currently a Digital Evangelist in a local
                         travel technology startup helping travel agencies
@@ -78,7 +79,7 @@ export default class extends React.PureComponent<any> {
                     </Col>
                     <Col className={"pagecontent"} sm={24} lg={8}>
                         <div id="pic-wrap">
-                        <div id="pic" data-aos="fade-right">
+                        <div id="pic" data-aos="flip-down" data-aos-delay="800">
                       <img src="../static/img/liyan.jpg" />
                       </div>
                       </div>

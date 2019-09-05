@@ -407,49 +407,13 @@ p{
 	margin: 0 0 0.5em;
 	font-size: 1.5em;
 }
-@-webkit-keyframes borderAnimation {
-	0% {
-	  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-	}
-  
-	33% {
-	  border-radius: 30% 70% 66% 34% / 37% 36% 64% 63%;
-	}
-  
-	66% {
-	  border-radius: 37% 63% 62% 38% / 32% 43% 57% 68%;
-	}
-  
-	100% {
-	  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-	}
-  }
-  
-  @keyframes borderAnimation {
-	0% {
-	  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-	}
-  
-	33% {
-	  border-radius: 30% 70% 66% 34% / 37% 36% 64% 63%;
-	}
-  
-	66% {
-	  border-radius: 37% 63% 62% 38% / 32% 43% 57% 68%;
-	}
-  
-	100% {
-	  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-	}
-  }
   
 #pic{
 	background-image: url(http://parenadev.wpengine.com/wp-content/uploads/2019/09/PA_story.jpg);
 	width: 350px;
     height: 350px;
-	border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    -webkit-animation: borderAnimation 4s linear infinite;
-    animation: borderAnimation 4s linear infinite;
+    border-radius: 50%;
+    overflow: hidden;
     position: relative;
     z-index: 1;
 }
@@ -472,7 +436,7 @@ p{
 	}
 
 	.pad-y, .pad-top{
-		padding-top: 3rem;
+		padding-top: 6rem;
 	}
 	
 	h2{
@@ -495,7 +459,7 @@ p{
 	}
 
 	#vision {
-		padding: 10em 2em;
+		padding: 8em 2em;
 		box-sizing: border-box;
 		color: #fff;
 		text-align: center;
@@ -507,7 +471,7 @@ p{
 			font-size: 20px;
 			line-height: 1;
 			margin: 10px 0;
-			color: #907538;
+			color: #737372;
 		}
 	}
 }

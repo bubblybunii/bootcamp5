@@ -18,6 +18,7 @@ export default class extends React.PureComponent<any> {
   };
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     const d = new Date();
     const time = d.getHours();
     if (time < 12) {
