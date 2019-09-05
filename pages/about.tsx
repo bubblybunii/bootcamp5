@@ -7,7 +7,7 @@ import Router from "next/router";
 export default class extends React.PureComponent<any> {
   componentDidMount() {
     AOS.init({
-      duration: 500
+      duration: 1200
     });
   }
   render() {
@@ -18,10 +18,10 @@ export default class extends React.PureComponent<any> {
             <section className="parallax">
               <Row className={"middle-container"} id={"vision"}>
                 <Col className="wrap">
-                  <h1 data-aos="fade-up" className="aos-init aos-animate">
+                  <h1 data-aos="flip-left">
                     Welcome!
                   </h1>
-                  <p data-aos="fade-in" className="aos-init aos-animate">
+                  <p data-aos="flip-up" data-aos-delay="300">
                     Shine a light on people & technology making our world
                     better, lets code for good.
                   </p>
@@ -35,7 +35,7 @@ export default class extends React.PureComponent<any> {
                 <Row gutter={16} type="flex" justify="space-between">
                   <div className={"pagewrapper"}>
                     <Col className={"pagecontent"} sm={24} lg={16}>
-                      <h1 className={"h1-title"}>About Me</h1>
+                      <h1 className={"h1-title aos-init aos-animate"} data-aos="fade-right">About Me</h1>
                       <p>
                         Li Yan is currently a Digital Evangelist in a local
                         travel technology startup helping travel agencies
@@ -78,7 +78,7 @@ export default class extends React.PureComponent<any> {
                     </Col>
                     <Col className={"pagecontent"} sm={24} lg={8}>
                         <div id="pic-wrap">
-                        <div id="pic">
+                        <div id="pic" data-aos="fade-right">
                       <img src="../static/img/liyan.jpg" />
                       </div>
                       </div>
