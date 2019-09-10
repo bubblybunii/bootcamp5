@@ -333,200 +333,200 @@ export const data2Hour =
   ],
   "items": [
     {
-      "update_timestamp": "2019-09-04T15:08:52+08:00",
-      "timestamp": "2019-09-04T15:00:00+08:00",
+      "update_timestamp": "2019-09-10T16:08:52+08:00",
+      "timestamp": "2019-09-10T16:00:00+08:00",
       "valid_period": {
-        "start": "2019-09-04T15:00:00+08:00",
-        "end": "2019-09-04T17:00:00+08:00"
+        "start": "2019-09-10T16:00:00+08:00",
+        "end": "2019-09-10T18:00:00+08:00"
       },
       "forecasts": [
         {
           "area": "Ang Mo Kio",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Bedok",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Bishan",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Boon Lay",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Bukit Batok",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Bukit Merah",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Bukit Panjang",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Bukit Timah",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Central Water Catchment",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Changi",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Choa Chu Kang",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Clementi",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "City",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Geylang",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Hougang",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Jalan Bahar",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Jurong East",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Jurong Island",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Jurong West",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Kallang",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Lim Chu Kang",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Mandai",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Marine Parade",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Novena",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Pasir Ris",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Paya Lebar",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Pioneer",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Pulau Tekong",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Pulau Ubin",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Punggol",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Queenstown",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Seletar",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Sembawang",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Sengkang",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Sentosa",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Serangoon",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Southern Islands",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Sungei Kadut",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Tampines",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Tanglin",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Tengah",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Toa Payoh",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Tuas",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Western Islands",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Western Water Catchment",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Woodlands",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         },
         {
           "area": "Yishun",
-          "forecast": "Partly Cloudy (Day)"
+          "forecast": "Slightly Hazy"
         }
       ]
     }

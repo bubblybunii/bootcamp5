@@ -212,7 +212,7 @@ export default class extends React.PureComponent<any> {
 
     return (
       <section id="home">
-        {console.log(  result24[0]['general']['forecast'])}
+        {/* {console.log(  result24[0]['general']['forecast'])} */}
         <article className="wrap">
           <Tabs type="card">
             <TabPane tab="24 HOUR FORECAST" key="0">
@@ -269,6 +269,7 @@ export default class extends React.PureComponent<any> {
                     </span>
                   </div>
                 </section>
+                <div className="table-wrap">
                 <table className="info-table">
                   <tbody>
                     <tr>
@@ -294,9 +295,11 @@ export default class extends React.PureComponent<any> {
                     </tr>
                   </tbody>
                 </table>
+                </div>
               </div>
             </TabPane>
             <TabPane tab="2 HOUR FORECAST" key="1">
+            <div className="table-wrap">
               <table className="info-table">
                 <tbody>
                   <tr>
@@ -315,8 +318,10 @@ export default class extends React.PureComponent<any> {
                     ))}
                 </tbody>
               </table>
+              </div>
             </TabPane>
             <TabPane tab="4 DAYS FORECAST" key="2">
+            <div className="table-wrap">
               <table className="info-table">
                 <tbody>
                   <tr>
@@ -336,6 +341,7 @@ export default class extends React.PureComponent<any> {
                   ))}
                 </tbody>
               </table>
+              </div>
             </TabPane>
           </Tabs>
         </article>

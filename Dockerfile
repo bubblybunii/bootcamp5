@@ -1,8 +1,5 @@
 FROM node:alpine
 
-RUN apk update && apk upgrade && \
-    apk add --no-cache bash git openssh
-
 # Create app directory
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

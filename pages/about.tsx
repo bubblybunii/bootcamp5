@@ -7,7 +7,7 @@ import Router from "next/router";
 export default class extends React.PureComponent<any> {
   componentDidMount() {
     AOS.init({
-      duration: 1200
+      duration: 800
     });
     window.scrollTo(0, 0);
   }
@@ -17,6 +17,10 @@ export default class extends React.PureComponent<any> {
         <Row className={"aboutus_container"}>
           <Col span={24}>
             <section className="parallax">
+              <div className="bg-over">
+                &nbsp;
+              </div>
+
               <Row className={"middle-container"} id={"vision"}>
                 <Col className="wrap">
                   <h1 data-aos="flip-left">

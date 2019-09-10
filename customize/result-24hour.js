@@ -2,26 +2,26 @@ export const data24Hour =
  {
   "items": [
     {
-      "update_timestamp": "2019-09-04T14:36:18+08:00",
-      "timestamp": "2019-09-04T14:30:00+08:00",
+      "update_timestamp": "2019-09-10T11:51:18+08:00",
+      "timestamp": "2019-09-10T11:41:00+08:00",
       "valid_period": {
-        "start": "2019-09-04T12:00:00+08:00",
-        "end": "2019-09-05T12:00:00+08:00"
+        "start": "2019-09-10T12:00:00+08:00",
+        "end": "2019-09-11T12:00:00+08:00"
       },
       "general": {
-        "forecast": "Windy",
+        "forecast": "Slightly Hazy",
         "relative_humidity": {
-          "low": 60,
-          "high": 95
+          "low": 50,
+          "high": 90
         },
         "temperature": {
-          "low": 25,
-          "high": 33
+          "low": 26,
+          "high": 34
         },
         "wind": {
           "speed": {
-            "low": 15,
-            "high": 30
+            "low": 10,
+            "high": 25
           },
           "direction": "SSE"
         }
@@ -29,41 +29,41 @@ export const data24Hour =
       "periods": [
         {
           "time": {
-            "start": "2019-09-04T12:00:00+08:00",
-            "end": "2019-09-04T18:00:00+08:00"
+            "start": "2019-09-10T12:00:00+08:00",
+            "end": "2019-09-10T18:00:00+08:00"
           },
           "regions": {
-            "west": "Windy",
-            "east": "Windy",
-            "central": "Windy",
-            "south": "Windy",
-            "north": "Windy"
+            "west": "Slightly Hazy",
+            "east": "Slightly Hazy",
+            "central": "Slightly Hazy",
+            "south": "Slightly Hazy",
+            "north": "Slightly Hazy"
           }
         },
         {
           "time": {
-            "start": "2019-09-04T18:00:00+08:00",
-            "end": "2019-09-05T06:00:00+08:00"
+            "start": "2019-09-10T18:00:00+08:00",
+            "end": "2019-09-11T06:00:00+08:00"
           },
           "regions": {
-            "west": "Windy",
-            "east": "Windy",
-            "central": "Windy",
-            "south": "Windy",
-            "north": "Windy"
+            "west": "Slightly Hazy",
+            "east": "Slightly Hazy",
+            "central": "Slightly Hazy",
+            "south": "Slightly Hazy",
+            "north": "Slightly Hazy"
           }
         },
         {
           "time": {
-            "start": "2019-09-05T06:00:00+08:00",
-            "end": "2019-09-05T12:00:00+08:00"
+            "start": "2019-09-11T06:00:00+08:00",
+            "end": "2019-09-11T12:00:00+08:00"
           },
           "regions": {
-            "west": "Windy",
-            "east": "Windy",
-            "central": "Windy",
-            "south": "Windy",
-            "north": "Windy"
+            "west": "Slightly Hazy",
+            "east": "Slightly Hazy",
+            "central": "Slightly Hazy",
+            "south": "Slightly Hazy",
+            "north": "Slightly Hazy"
           }
         }
       ]

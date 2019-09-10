@@ -1,9 +1,8 @@
 /* eslint-disable */
 const withLess = require('@zeit/next-less')
-const withTypescript = require('@zeit/next-typescript')
 
-module.exports = withTypescript(withLess({
+module.exports = withLess({
   lessLoaderOptions: {
     javascriptEnabled: true,
   },
-}))
+})
