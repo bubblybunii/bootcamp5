@@ -97,7 +97,8 @@ body, body * {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
+	background-attachment: fixed;
+	padding-bottom: 40px;
 	.wrap{
 		padding-top: 150px;
 	}
@@ -143,7 +144,7 @@ body, body * {
 		.bg-border{
 			background: #fbf2ea;
 			display: inline-block;
-			padding: 0 24px 18px;
+			padding: 10px 54px 18px;
 			border-radius: 10px;
 		}
 		h4{
@@ -194,10 +195,9 @@ body, body * {
 	  overflow: auto;
   }
   .info-table {
-	margin-bottom: 50px;
 	width: 100%;
 	td{
-		color: #355fbd;
+		color: #6891d2;
 	}
   }
   .info-table th,
@@ -207,16 +207,16 @@ body, body * {
 	text-align: center;
   }
    .info-table th {
-	background: #676767;
+	background: #de7f5b;
 	color: @primary-color;
 	text-transform: uppercase;
 	color: #fff;
   }
   .info-table tr:first-child th {
-	background:#676767;
+	background:#de7f5b;
   }
   .info-table tr:nth-child(2) th{
-	background: #c38f69;
+	background: #E6A576;
 }
   .info-table tr:nth-child(even) {
 	background: #f5f2e9;
@@ -385,13 +385,40 @@ body, body * {
 	margin: auto;
 	position: relative;
 }
-
-.main #footer h1 {
-	color: #fff;
-	text-align: center;
-	margin: 0 0 1em;
+button.ant-btn-round{
+	background:#e88454;
+	padding: 10px 20px;
+    border: 0;
+    height: auto;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+	letter-spacing: 1px;
+	span{
+		font-family: 'Sansita', sans-serif;
+		font-size: 16px;
+	}
+	&:hover{
+		background:#c77a4d;
+		color: #fff;
+	}
 }
-
+#footer {
+	background: #4a4848;
+	text-align: center;
+	color: #a59e9e;
+	padding: 15px;
+	
+	svg{
+		font-size: 30px;
+		vertical-align: middle;
+	}
+	h1 {
+		color: #fff;
+		margin: 0 0 1em;
+	}
+	p{margin: 0;}
+}
 p{
 	line-height: 1.8;
 }

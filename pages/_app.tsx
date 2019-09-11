@@ -130,7 +130,8 @@ export default class MyApp extends App<any> {
 							}
 						</Content>
 						<Footer id={'footer'}>
-						<strong>{`Li Yan - Made in ReactJS / Typescript / Ant Design`} © {new Date().getFullYear()}</strong><br />
+							<p><a href="https://github.com/bubblybunii/bootcamp5" target="_blank"><Icon type="github" />  View in Github </a></p>
+							<p><strong>{`Li Yan - Made in ReactJS / Typescript / Ant Design`} © {new Date().getFullYear()}</strong></p>
 						</Footer>
 					</Layout>
 				</Layout>

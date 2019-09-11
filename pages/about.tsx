@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Icon } from "antd";
+import { Row, Col, Icon, Button } from "antd";
 import Link from "next/link";
 import AOS from "aos";
 import Router from "next/router";
@@ -58,6 +58,7 @@ export default class extends React.PureComponent<any> {
                         + UI/UX, she also enjoys dancing & a zen yoga stretch
                         after a long day of staring at the screen.
                       </p>
+                     
                       <p><b>Why choose Li Yan?</b></p>
                       <ul>
                         <li> <Icon type="caret-right" /> Good knowledge in HTML & CSS</li>
@@ -69,7 +70,7 @@ export default class extends React.PureComponent<any> {
 
                         <li><Icon type="caret-right" /> Committed & Responsible team player </li>
 
-                        <li><Icon type="caret-right" /> Keep Calm & Yoga with Li Yan 😛 </li>
+                        <li><Icon type="caret-right" /> If you want to practice Yoga with Li Yan 😛 </li>
                       </ul>
                       Just kidding, time to check out{" "}
                       <a
@@ -80,6 +81,8 @@ export default class extends React.PureComponent<any> {
                         my technical task
                       </a>
                       ...
+                      <p> <a href="mailto:babyxbunii@hotmail.com"><Button shape="round">Connect with Li Yan today!</Button></a> </p>
+                    
                     </Col>
                     <Col className={"pagecontent"} sm={24} lg={8}>
                         <div id="pic-wrap">
