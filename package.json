@@ -5,7 +5,8 @@
     "dev": "node server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "update-weather-static": "ts-node weather-static.js"
+    "update-weather-static": "ts-node weather-static.js",
+    "heroku-postbuild": "webpack -p"
   },
   "dependencies": {
     "@babel/plugin-proposal-decorators": "^7.4.4",
