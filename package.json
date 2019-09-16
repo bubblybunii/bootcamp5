@@ -1,12 +1,15 @@
 {
   "name": "bootcamp",
   "description": "Li Yan Weather Forecast",
+  "engines": {
+    "node": "12.9.1"
+  },
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
     "start": "node server.js",
     "update-weather-static": "ts-node weather-static.js",
-    "heroku-postbuild": "webpack -p"
+    "heroku-postbuild": "next build"
   },
   "dependencies": {
     "@babel/plugin-proposal-decorators": "^7.4.4",
