@@ -1,10 +1,23 @@
 const express = require('express')
-const path = require('path')
-const PORT = process.env.PORT || 5000
+const next = require('next')
+const dev = process.env.NODE_ENV !== 'production'
+const app = next({ dev })
+const handle = app.getRequestHandler()
 
-express()
-  .use(express.static(path.join(__dirname, 'public')))
-  .set('views', path.join(__dirname, 'views'))
-  .set('view engine', 'ejs')
-  .get('/', (req, res) => res.render('pages/index'))
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+app
+    .prepare()
+    .then(() => {
+        const server = express()
+
+        server.get('*', (req, res) => {
+            return handle(req, res)
+        })
+        server.listen(3000, err => {
+            if (err) throw err
+            console.log('> Ready on http://localhost:3000')
+        })
+    })
+    .catch(ex => {
+        console.error(ex.stack)
+        process.exit(1)
+    })
