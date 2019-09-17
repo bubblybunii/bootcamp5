@@ -2,7 +2,8 @@
   "name": "bootcamp",
   "description": "Li Yan Weather Forecast",
   "engines": {
-    "node": "12.9.1"
+    "node": "12.9.1",
+    "npm": "6.10.2"
   },
   "scripts": {
     "dev": "node server.js",
