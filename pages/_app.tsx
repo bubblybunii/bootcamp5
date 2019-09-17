@@ -94,9 +94,8 @@ export default class MyApp extends App<any> {
 				{this.state.pageURL.includes("tour?id") ? "" :
 					<Fragment>
 						<meta name="description" content={`Li Yan - Weather Forecast`} />
-						<meta name="keywords" content="Pilgrimage and Buddhist tours, tourist,leisure, travel,airfares, hotels, group tours, free and easy" />
 						<meta property="og:title" content={`Li Yan - Weather Forecast`} />
-						<meta property="og:description" content="To fulfill everyone’s travel dreams and expand your horizon of the world" />
+						<meta property="og:description" content="Welcome!" />
 						<meta property="og:image:type" content="image/jpeg" />
 						<meta property="og:image:width" content="600" />
 						<meta property="og:image:height" content="314" />

@@ -446,10 +446,10 @@ p{
 	font-size: 1.5em;
 }
   
-#pic-wrap{
-	width: 100%;
-	border-radius: 50%;
-    overflow: hidden;
+#pic img{
+    border-radius: 50%;
+    margin: auto;
+    display: block;
 }
 
 .aboutus_container{
@@ -577,18 +577,40 @@ p{
 		}
 	}
 }
-@media (max-width: 780px) {
+@media (max-width: 980px) {
+	.aboutus_container .pad-y, .aboutus_container .pad-top {
+		padding-top: 3rem;
+	}
+	.aboutus_container {
+		.pagewrapper{
+			padding: 0 20px;
+		}
+		button{
+			margin: auto;
+			display: block;
+		}
+	}
+	#home .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab {
+		padding: 5px 15px;
+		font-size: 14px;
+	}
 	#pic-wrap{
 		margin-top: 20px;
 	}
+	.info-table .temp {
+		display: block;
+	}
 	.info-table {
 	td{
-		min-width: 100px;
+		min-width: 150px;
 	}
 	img{
 		display: block;
     	margin: auto;
 		}
+	}
+	footer strong{
+		font-size: 13px;
 	}
 }
 @import "../customize/responsive.less";

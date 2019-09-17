@@ -39,7 +39,7 @@ export default class extends React.PureComponent<any> {
               <Col className="pad-y">
                 <Row gutter={24} type="flex" justify="space-between">
                   <div className={"pagewrapper"}>
-                    <Col className={"pagecontent"} sm={24} lg={16} data-aos="fade-up" data-aos-delay="500">
+                    <Col className={"pagecontent"} sm={24} lg={16} data-aos="fade-up" data-aos-delay="300">
                       <h1 className={"h1-title"}>About Me</h1>
                       <p>
                         Li Yan is currently a Digital Evangelist in a local
@@ -86,7 +86,7 @@ export default class extends React.PureComponent<any> {
                     </Col>
                     <Col className={"pagecontent"} sm={24} lg={8}>
                         <div id="pic-wrap">
-                        <div id="pic" data-aos="flip-down" data-aos-delay="800">
+                        <div id="pic" data-aos="flip-down" data-aos-delay="500">
                       <img src="../static/img/liyan.jpg" />
                       </div>
                       </div>

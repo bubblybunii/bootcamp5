@@ -2,26 +2,26 @@ export const data24Hour =
  {
   "items": [
     {
-      "update_timestamp": "2019-09-10T11:51:18+08:00",
-      "timestamp": "2019-09-10T11:41:00+08:00",
+      "update_timestamp": "2019-09-17T05:51:18+08:00",
+      "timestamp": "2019-09-17T05:36:00+08:00",
       "valid_period": {
-        "start": "2019-09-10T12:00:00+08:00",
-        "end": "2019-09-11T12:00:00+08:00"
+        "start": "2019-09-17T06:00:00+08:00",
+        "end": "2019-09-18T06:00:00+08:00"
       },
       "general": {
         "forecast": "Slightly Hazy",
         "relative_humidity": {
-          "low": 50,
+          "low": 55,
           "high": 90
         },
         "temperature": {
           "low": 26,
-          "high": 34
+          "high": 33
         },
         "wind": {
           "speed": {
             "low": 10,
-            "high": 25
+            "high": 15
           },
           "direction": "SSE"
         }
@@ -29,8 +29,8 @@ export const data24Hour =
       "periods": [
         {
           "time": {
-            "start": "2019-09-10T12:00:00+08:00",
-            "end": "2019-09-10T18:00:00+08:00"
+            "start": "2019-09-17T06:00:00+08:00",
+            "end": "2019-09-17T12:00:00+08:00"
           },
           "regions": {
             "west": "Slightly Hazy",
@@ -42,8 +42,8 @@ export const data24Hour =
         },
         {
           "time": {
-            "start": "2019-09-10T18:00:00+08:00",
-            "end": "2019-09-11T06:00:00+08:00"
+            "start": "2019-09-17T12:00:00+08:00",
+            "end": "2019-09-17T18:00:00+08:00"
           },
           "regions": {
             "west": "Slightly Hazy",
@@ -55,8 +55,8 @@ export const data24Hour =
         },
         {
           "time": {
-            "start": "2019-09-11T06:00:00+08:00",
-            "end": "2019-09-11T12:00:00+08:00"
+            "start": "2019-09-17T18:00:00+08:00",
+            "end": "2019-09-18T06:00:00+08:00"
           },
           "regions": {
             "west": "Slightly Hazy",

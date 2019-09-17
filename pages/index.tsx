@@ -24,7 +24,7 @@ export default class extends React.PureComponent<any> {
     if (time < 12) {
       this.setState({ greeting: "Good morning!" });
     }
-    if (time == 12 || time < 18) {
+    else if (time == 12 || time > 13 && time <= 18) {
       this.setState({ greeting: "Good Afternoon!" });
     } else {
       this.setState({ greeting: "Good Evening!" });
