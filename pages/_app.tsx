@@ -107,7 +107,7 @@ export default class MyApp extends App<any> {
 					<meta charSet='utf-8' />
 					<title>{`Li Yan - Weather Forecast`}</title>
 					{/* favicons */}
-					<link rel='icon' type='image/png' sizes='32x32' href='/static/favicon/favicon-32x32.png' />
+					<link rel='icon' type='image/png' sizes='32x32' href='https://liyan-bootcamp5.herokuapp.com/static/favicon/favicon-32x32.png' />
 					<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
 					<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Sansita:700&display=swap" rel="stylesheet" />
 					<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
