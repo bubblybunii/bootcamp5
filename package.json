@@ -9,7 +9,7 @@
     "build": "next build",
     "start": "node server.js",
     "update-weather-static": "ts-node weather-static.js",
-    "heroku-postbuild": "next build"
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "@babel/plugin-proposal-decorators": "^7.4.4",
@@ -18,7 +18,6 @@
     "@fortawesome/free-solid-svg-icons": "^5.9.0",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "@zeit/next-less": "^1.0.1",
-    "@zeit/next-typescript": "^1.1.1",
     "antd": "^3.20.5",
     "aos": "^3.0.0-beta.6",
     "babel-plugin-import": "^1.12.0",
@@ -32,8 +31,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scroll": "^1.7.12",
-    "ts-node": "^8.3.0",
-    "webpack-cli": "^3.3.8"
+    "ts-node": "^8.3.0"
   },
   "license": "ISC",
   "devDependencies": {
